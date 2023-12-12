@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multiplication Tables</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="multiplicationTable"></table>
+
+    <script>
+      let currentRow = 2;
+      let table = document.getElementById("multiplicationTable");
+
+      function generateRow() {
+        let row = table.insertRow();
+        for (let i = 1; i <= 10; i++) {
+          let cell = row.insertCell();
+          cell.textContent = currentRow * i;
+          cell.style.fontSize = `${14 + i}px`; // Increase font size for each cell
+          cell.style.color = getRandomColor(); // Generate random color for text
+        }
+        currentRow++;
+        if (currentRow > 10) {
+          clearInterval(intervalID); // Stop setInterval when the table is completed
+        }
+      }
+
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      const intervalID = setInterval(generateRow, 5000); // Display each row every 5 seconds
+    </script>
+  </body>
+</html>
