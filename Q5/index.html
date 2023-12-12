@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="my.css"> -->
+    <style>
+        div{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+}
+    </style>
+</head>
+<body>
+    <p id="chngme">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim debitis vitae doloremque sapiente itaque repudiandae dignissimos ipsam omnis expedita incidunt nostrum sint delectus sit nihil perferendis quam, accusantium repellendus unde.</p>
+    <div>
+        <button class="cc" id="b1" value="red">Red</button>
+        <button class="cc" id="b2" value="green">Green</button>
+        <button class="cc" id="b3" value="blue">Blue</button>
+        <button class = 'cfs' value="10" id="b4">10</button>
+        <button class = 'cfs' value="20" id="b5">20</button>
+        <button class = 'cfs' value="30" id="b6">30</button>
+        <button id="b7" class="cf" value="Arial">Impact</button>
+        <button id="b8" class="cf" value="Comic Sans MS">Comic Sans</button>
+        <button id="b9" class="cf" value="sans-serif">Sans-serif</button>
+    </div>
+    <script>
+        function changeC(e){
+            document.querySelector('#chngme').style.color = e.target.value;
+            console.log(e.target.value);
+        }
+        document.querySelectorAll('.cc').forEach(()=>{this.addEventListener('click',changeC);});
+
+        function changefs(e){
+            document.querySelector('#chngme').style.fontSize = e.target.value+'px';
+            console.log(e.target.value);
+        }
+        document.querySelectorAll('.cfs').forEach(()=>{this.addEventListener('click',changefs);});
+         
+        function changef(e){
+            document.querySelector('#chngme').style.fontFamily = e.target.value;
+            console.log(e.target.value);
+        }
+        document.querySelectorAll('.cf').forEach(()=>{this.addEventListener('click',changef);});
+   
+    </script>
+</body>
+</html>
